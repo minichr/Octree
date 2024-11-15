@@ -160,9 +160,7 @@ OcTree OcTree::addTree(const OcTree& other){
                 newPattern += 'w';
             }
             else{
-                //std::cout << "add danger\n";
                 newPattern += 'p';
-                //one is w p gives better chances na may color dun
                 if(this->octree[i].first == 'w' || other.octree[i].first == 'w'){
                     if(this->octree[i].first == 'p'){
                         for(int j = 0; j < 8; j++){
@@ -207,7 +205,7 @@ OcTree OcTree::addTree(const OcTree& other){
                         }
                     }
                 }
-                else{ //else pag p both
+                else{ //else p both
                     for(int j = 0; j < 8; j++){
                         if(this->octree[i].second[j].first == 'b' || other.octree[i].second[j].first == 'b'){
                             newPattern += 'b';
