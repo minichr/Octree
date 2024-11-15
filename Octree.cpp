@@ -55,7 +55,7 @@ OcTree::OcTree(std::string pattern){
                 octree[i].first = 'b';
             }
         }
-        else{ //(this->prePattern[0] == 'w')
+        else{ 
             for(int i = 0; i < 8; i++){
                 octree[i].first = 'w';
             }
@@ -64,7 +64,7 @@ OcTree::OcTree(std::string pattern){
     //subdivide
     else{
         int cnt = 0;
-        if(this->prePattern[cnt] == 'p'){ //removing this if
+        if(this->prePattern[cnt] == 'p'){ 
             cnt++;
             for(int i = 0; i < 8; i++){
                 if(this->prePattern[cnt] == 'b'){
@@ -77,25 +77,19 @@ OcTree::OcTree(std::string pattern){
                     cnt++;
                 }
                 else{ //p
-                    //octree.second.resize(8);
                     octree[i].first = 'p';
                     cnt++;
                     for(int j = 0; j < 8; j++){
-                        //std::cout << "init danger?\n";
                         if(this->prePattern[cnt] == 'b'){
-                            //std::cout << "B if\n";
                             octree[i].second[j].first = 'b';
                             cnt++;
                             bCnt += 64;
                         }
                         else if(this->prePattern[cnt] == 'w'){
-                            //std::cout << "W if\n";
                             octree[i].second[j].first = 'w';
                             cnt++;
                         }
                         else{//p
-                            //std::cout << "p if\n";
-                            //octree.second.second.resize(8);
                             octree[i].second[j].first = 'p';
                             cnt++;
                             for(int k = 0; k < 8; k++){
@@ -109,7 +103,6 @@ OcTree::OcTree(std::string pattern){
                                     cnt++;
                                 }
                                 else{//p
-                                    //octree.second.second.second.resize(8);
                                     octree[i].second[j].second[k].first = 'p';
                                     cnt++;
                                     for(int m = 0; m < 8; m++){
