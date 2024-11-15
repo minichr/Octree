@@ -33,7 +33,7 @@ class OcTree{
 
     public:
         OcTree(std::string pattern);
-        ~OcTree(); //delete shiz
+        ~OcTree(); //for deletion of tree
         std::string getPattern() {return this->prePattern;}
         OcTree addTree(const OcTree& other); //add pattern and use that to initialize
         int count_blue() {return bCnt;}
